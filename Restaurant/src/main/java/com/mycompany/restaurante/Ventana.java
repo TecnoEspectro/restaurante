@@ -129,7 +129,8 @@ public class Ventana extends javax.swing.JFrame {
 
     private void analiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analiceActionPerformed
         
-        //Mostrar Numero de platos(de un plato en especifico) vendidos en la semana
+        objmenu.analizarDatos();
+        //Mostrar Numero de platos(de un plato en especifico) vendidos en la semana YA
         //Dia de la semana en el que MAS y MENOS se vendio el plato
         //Dia de la semana en el que MAS y MENOS se vendieron todos los platos
         //MOSTRAR 5 ESTADISTICAS ADICIONALES A GUSTO PROPIO
