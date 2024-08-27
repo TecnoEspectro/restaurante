@@ -29,12 +29,25 @@ public class Menu {
     int sumaFinal = 0;
     int prom = 0;
     int promFinal = 0;
+    Platos arrayObjetos[];
     
     public void crearMenu(int cantity){
-    
-        platos=new String[cantity];
+   
+        arrayObjetos = new Platos[cantity];
+        
+        Platos obj=new Platos();
         
         int i =0;
+        while(i<cantity){
+        
+            obj.setNombre(JOptionPane.showInputDialog("Nombre del plato"));
+            obj.setPrecio(Integer.parseInt("Precio del plato"));
+            
+            
+        }
+
+        
+
         while(i<cantity){
         
             platos[i]=JOptionPane.showInputDialog("Diga el nombre del plato " + (i+1));
