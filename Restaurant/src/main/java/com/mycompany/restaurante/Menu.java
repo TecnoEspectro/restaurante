@@ -30,50 +30,38 @@ public class Menu {
     int prom = 0;
     int promFinal = 0;
     Platos arrayObjetos[];
+    Platos obj[];
+    String nombre;
+    int precio;
     
-    public void crearMenu(int cantity){
-   
-        arrayObjetos = new Platos[cantity];
-        
-        Platos obj=new Platos();
-        
-        int i =0;
-        while(i<cantity){
-        
-            obj.setNombre(JOptionPane.showInputDialog("Nombre del plato"));
-            obj.setPrecio(Integer.parseInt("Precio del plato"));
-            
-            
-        }
-
-        
-
-        while(i<cantity){
-        
-            platos[i]=JOptionPane.showInputDialog("Diga el nombre del plato " + (i+1));
+    public void crearMenu(int cantidad){
+    obj = new Platos[cantidad];
+        int i=0;
+        while(i<cantidad){
+            nombre = JOptionPane.showInputDialog("ingresa el nombre");
+            precio = Integer.parseInt(JOptionPane.showInputDialog("ingrese el precio"));
+            obj[i] = new Platos(nombre, precio);
             i++;
-            
         }
-        
     }
     
     public void consultarMenu(){
     
-        for(int i=0; i<platos.length;i++){
-        JOptionPane.showMessageDialog(null, "Platos: "+ platos[i]);
+        for(int i=0; i<obj.length;i++){
+        JOptionPane.showMessageDialog(null, "Platos: "+ obj[i].getNombre() + " Precios: " + obj[i].getPrecio());
         }
         
     }
     
     public void ingresarDatos(){
     
-        datos=new int[6][platos.length];
+        datos=new int[6][obj.length];
         
         for(int f=0; f<6; f++){
         
-            for(int c=0; c<platos.length; c++){
+            for(int c=0; c<obj.length; c++){
         
-                datos[f][c]=Integer.parseInt(JOptionPane.showInputDialog("Ventas para el dia: "+dias[f]+ " Plato: " + platos[c]));
+                datos[f][c]=Integer.parseInt(JOptionPane.showInputDialog("Ventas para el dia: "+dias[f]+ " Plato: " + obj[c]));
             
             }
         
@@ -86,7 +74,7 @@ public class Menu {
         System.out.println("Mostrar platos vendidos individualmente ");
         System.out.println("Plato 1");
         sumaFinal=0;
-        for(int c=0; c<platos.length; c++){
+        for(int c=0; c<obj.length; c++){
         suma=0;
         mas=0;
         menos=100;
@@ -108,7 +96,7 @@ public class Menu {
             totalMenos+=restaTotal;
             sumaFinal+=suma;
             
-                 JOptionPane.showMessageDialog(null, "Ventas totales del plato " + platos[c] + " en la semana es de " + suma);
+                 JOptionPane.showMessageDialog(null, "Ventas totales del plato " + obj[c] + " en la semana es de " + suma);
                  JOptionPane.showMessageDialog(null, "La mayor venta del plato fue de "+ mas + " en el dia " + masDia + " y la menor venta del plato fue de " + menos + " en el dia " + menosDia);
                  JOptionPane.showMessageDialog(null, "Promedio de ventas del plato en la semana fue de "+ prom);
                  

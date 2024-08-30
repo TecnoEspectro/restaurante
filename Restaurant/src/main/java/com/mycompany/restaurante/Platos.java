@@ -35,5 +35,9 @@ public class Platos {
     private int precio=0;
     private String nombre;
     
+    public Platos(String nombre, int precio) {
+        this.precio = precio;
+        this.nombre = nombre;
+    }
     
 }
